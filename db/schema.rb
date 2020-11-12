@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_11_12_071701) do
     t.text "Description"
     t.string "Distance_participating"
     t.string "Date_of_Event"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
