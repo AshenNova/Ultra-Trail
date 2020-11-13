@@ -1,1 +1,25 @@
 <h1>This is the Index Page </h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name of Event |</th>
+      <th>Country |</th>
+      <th>Distance Participating |</th>
+      <th>Date of Event |</th>
+      <th>Description |</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.Name_of_Event %></td>
+        <td><%= event.Country %></td>
+        <td><%= event.Distance_participating %></td>
+        <td><%= event.Date_of_Event %></td>
+        <td><%= event.Description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

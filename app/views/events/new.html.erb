@@ -1,0 +1,36 @@
+<h1> You can submit Events on this page</h1>
+
+<% if @event.errors.any? %>
+  <h2>The following errors prevented the Event from being submitted</h2>
+    <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= form_with scope: :event, url: events_path, local: true do |f| %>
+  <p>
+    <%= f.label :Name_of_Event %></br> 
+    <%= f.text_field :Name_of_Event %></br>
+  </p>
+  <p>
+    <%= f.label :Date_of_Event_DDMMYYYY %></br> 
+    <%= f.text_field :Date_of_Event %></br>
+  </p>
+  <p>
+    <%= f.label :Participating_distance %></br> 
+    <%= f.text_field :Distance_participating %></br>
+  </p>
+  <p>
+    <%= f.label :Country %></br> 
+    <%= f.text_area :Country %></br>
+  </p>
+    <p>
+    <%= f.label :Description %></br> 
+    <%= f.text_area :Description %></br>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
